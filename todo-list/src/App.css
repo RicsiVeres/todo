@@ -1,0 +1,26 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+*{
+  color: aliceblue;
+}
+
+
+
+
+#input{
+  padding: .5rem;
+  font-size: 1.2rem;
+  color: aliceblue;
+  background-color: rgb(54, 54, 54);
+}
+#submitbtn{
+  padding: 10px 1.5rem;
+  margin-left: 2rem;
+}
+.inputbox{
+  margin: 3rem;
+}
