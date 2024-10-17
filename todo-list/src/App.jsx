@@ -11,6 +11,7 @@ import './App.css';
 
 function App() {
   const [todos, settodos] = useState([]);
+  const [id, setid] = useState(1);
 
   const [newtodo, setnewtodo] = useState({
     id: 0,
@@ -21,10 +22,11 @@ function App() {
   function AddTodo() {
     settodos([...todos, newtodo]); 
     setnewtodo({
-      id: todos.length + 1,
+      id: id,
       text: "",
       completed: false
     });
+    setid(id+1);
   }
 
   function DeleteRow(id) {
@@ -41,7 +43,7 @@ function App() {
           value={newtodo.text} 
           onChange={(event) => {
             setnewtodo({
-              id: todos.length + 1,
+              id: id,
               text: event.target.value,
               completed: false
             })
@@ -71,7 +73,7 @@ function App() {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell sx={{color:"#fff"}} component="th" scope="row">
-                  {target.id}
+                  #{target.id}
                 </TableCell>
                 <TableCell sx={{color:"#fff"}} align="right">{target.text}</TableCell>
                 <TableCell align="right"><Button variant="outlined" color="error" onClick={() => {
