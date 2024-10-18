@@ -42,11 +42,13 @@ function App() {
           type="text"
           value={newtodo.text} 
           onChange={(event) => {
-            setnewtodo({
-              id: id,
-              text: event.target.value,
-              completed: false
-            })
+            if (event.target.value.length > 0) { //.....
+              setnewtodo({
+                id: id,
+                text: event.target.value,
+                completed: false
+              })  
+            }
           }}
           placeholder="Enter your todo"
         />
